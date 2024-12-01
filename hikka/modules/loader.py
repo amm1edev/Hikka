@@ -70,7 +70,7 @@ class LoaderMod(loader.Module):
         self.config = loader.ModuleConfig(
             loader.ConfigValue(
                 "MODULES_REPO",
-                "https://mods.hikariatama.ru",
+                "https://github.com/amm1edev/ame_repo/raw/main",
                 lambda: self.strings("repo_config_doc"),
                 validator=loader.validators.Link(),
             ),
@@ -78,9 +78,11 @@ class LoaderMod(loader.Module):
                 "ADDITIONAL_REPOS",
                 # Currenly the trusted developers are specified
                 [
-                    "https://github.com/hikariatama/host/raw/master",
-                    "https://github.com/MoriSummerz/ftg-mods/raw/main",
-                    "https://gitlab.com/CakesTwix/friendly-userbot-modules/-/raw/master",
+                    "https://github.com/amm1edev/AmeMods/raw/main",
+                    "https://github.com/coddrago/modules/raw/main",
+                    "https://raw.githubusercontent.com/MuRuLOSE/HikkaModulesRepo/main",
+                    "https://github.com/SkillsAngels/Modules/raw/main",
+                    "https://raw.githubusercontent.com/KorenbZla/HikkaModules",
                 ],
                 lambda: self.strings("add_repo_config_doc"),
                 validator=loader.validators.Series(validator=loader.validators.Link()),
@@ -103,7 +105,7 @@ class LoaderMod(loader.Module):
     async def _async_init(self):
         modules = list(
             filter(
-                lambda x: not x.startswith("https://mods.hikariatama.ru"),
+                lambda x: not x.startswith("https://github.com/amm1edev/ame_repo/raw/main"),
                 utils.array_sum(
                     map(
                         lambda x: list(x.values()),
