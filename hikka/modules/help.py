@@ -30,19 +30,16 @@ class Help(loader.Module):
                 "core_emoji",
                 "▪️",
                 lambda: "Core module bullet",
-                validator=loader.validators.Emoji(length=1),
             ),
             loader.ConfigValue(
                 "plain_emoji",
                 "▫️",
                 lambda: "Plain module bullet",
-                validator=loader.validators.Emoji(length=1),
             ),
             loader.ConfigValue(
                 "empty_emoji",
                 "🙈",
                 lambda: "Empty modules bullet",
-                validator=loader.validators.Emoji(length=1),
             ),
         )
 
@@ -358,7 +355,7 @@ class Help(loader.Module):
 
         await utils.answer(
             message,
-            "{}\n{}{}".format(
+            "{}\n<blockquote>{}</blockquote><blockquote>{}</blockquote>".format(
                 reply,
                 "".join(core_ + plain_ + dragon_ + (no_commands_ if force else [])),
                 (
