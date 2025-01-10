@@ -179,7 +179,7 @@ class Help(loader.Module):
 
         for name, fun in commands.items():
             reply += (
-                "\n<pre><emoji document_id=5265113787265988883>🦋</emoji> <code>{}{}</code>{}</pre> {}".format(
+                "\n<pre><emoji document_id=5265113787265988883>🦋</emoji> <code>{}{}</code>{} {}</pre>".format(
                     utils.escape_html(self.get_prefix("dragon" if is_dragon else None)),
                     name,
                     (
