@@ -265,7 +265,7 @@ class Help(loader.Module):
             for cmd in mod.commands:
                 cmd = cmd.split()[0]
                 if first:
-                    tmp += f": ( {cmd}"
+                    tmp += f"( {cmd}"
                     first = False
                 else:
                     tmp += f" | {cmd}"
