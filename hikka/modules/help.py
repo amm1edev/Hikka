@@ -170,8 +170,7 @@ class Help(loader.Module):
         if hasattr(module, "inline_handlers") and not is_dragon:
             for name, fun in module.inline_handlers.items():
                 reply += (
-                    "\n<blockquote><emoji document_id=5262584377946159361>📱</emoji>"
-                    " <code>{}</code></blockquote> {}".format(
+                    "\n<blockquote><emoji document_id=5262584377946159361>📱</emoji> <code>{}</code></blockquote> {}".format(
                         f"@{self.inline.bot_username} {name}",
                         (
                             utils.escape_html(inspect.getdoc(fun))
