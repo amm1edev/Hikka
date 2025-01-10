@@ -85,7 +85,7 @@ class KInfoMod(loader.Module):
             return 0, 0
             
     @loader.command()
-    async def cinfo(self, message):
+    async def info(self, message):
         """Показать информацию о юзерботе"""
         try:
             repo = git.Repo(search_parent_directories=True)
