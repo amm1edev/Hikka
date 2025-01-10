@@ -28,21 +28,18 @@ class Help(loader.Module):
         self.config = loader.ModuleConfig(
             loader.ConfigValue(
                 "core_emoji",
-                "▪️",
+                "<emoji document_id=5264913427041631157>🦋</emoji>",
                 lambda: "Core module bullet",
-                validator=loader.validators.Emoji(length=1),
             ),
             loader.ConfigValue(
                 "plain_emoji",
-                "▫️",
+                "<emoji document_id=5265113787265988883>🦋</emoji>",
                 lambda: "Plain module bullet",
-                validator=loader.validators.Emoji(length=1),
             ),
             loader.ConfigValue(
                 "empty_emoji",
-                "🙈",
+                "<emoji document_id=5264913427041631157>🦋</emoji>",
                 lambda: "Empty modules bullet",
-                validator=loader.validators.Emoji(length=1),
             ),
         )
 
@@ -152,7 +149,7 @@ class Help(loader.Module):
         )
         if module.__doc__:
             reply += (
-                "<i>\n<emoji document_id=5265113787265988883>🦋</emoji> "
+                "<i>\n<emoji document_id=5262938051323113690>💜</emoji> "
                 + utils.escape_html(inspect.getdoc(module))
                 + "\n</i>"
             )
