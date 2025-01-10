@@ -311,7 +311,7 @@ class Help(loader.Module):
 
             for cmd in commands:
                 if first:
-                    tmp += f": ( {cmd}"
+                    tmp += f"( {cmd}"
                     first = False
                 else:
                     tmp += f" | {cmd}"
@@ -328,7 +328,7 @@ class Help(loader.Module):
 
             for cmd in icommands:
                 if first:
-                    tmp += f": ( 🤖 {cmd}"
+                    tmp += f"( 🤖 {cmd}"
                     first = False
                 else:
                     tmp += f" | 🤖 {cmd}"
