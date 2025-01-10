@@ -16,11 +16,11 @@ __version__ = (1, 0, 0)
 # ------------------------------------------------------- #
 
 @loader.tds
-class CustomInfoMod(loader.Module):
-    """Улучшенная информация о юзерботе - ping, и т.д."""
+class KInfoMod(loader.Module):
+    """Инфо для Hikka"""
 
     strings = {
-        "name": "K:CustomInfo", 
+        "name": "KInfo", 
         "update_available": "<b>Доступно обновление!</b>",
         "latest_version": "<b>У вас последняя версия.</b>",
     }
@@ -32,7 +32,7 @@ class CustomInfoMod(loader.Module):
     def __init__(self):
         self.config = loader.ModuleConfig(
             "custom_info_text",
-            "<emoji document_id=5219899949281453881>✅</emoji> <b>K:CustomInfo</b>\n\n"
+            "<emoji document_id=5219899949281453881>✅</emoji> <b>Hikka</b>\n\n"
             "<emoji document_id=5247213725080890199>©️</emoji><b> Владелец:</b> <b>{owner}</b>\n\n"
             "<emoji document_id=5219943216781995020>⚡</emoji> <b>Версия:</b> <b>{version}</b>\n"
             "<emoji document_id=5222108309795908493>✨</emoji><b> Ветка:</b> <b>{branch}</b>\n"
@@ -53,7 +53,7 @@ class CustomInfoMod(loader.Module):
             """,
             
             "banner_url",
-            "https://x0.at/7uTU.mp4",
+            "https://0x0.st/s/Zf_Om0SqL8SoTAEcAmUc7Q/8-pZ.jpg",
             "URL баннера, который будет отправлен с информацией (None чтобы отключить)"
         )
 
