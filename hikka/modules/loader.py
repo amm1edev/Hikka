@@ -78,9 +78,22 @@ class LoaderMod(loader.Module):
                 "ADDITIONAL_REPOS",
                 # Currenly the trusted developers are specified
                 [
-                    "https://github.com/hikariatama/host/raw/master",
-                    "https://github.com/MoriSummerz/ftg-mods/raw/main",
-                    "https://gitlab.com/CakesTwix/friendly-userbot-modules/-/raw/master",
+                    "https://github.com/amm1edev/ame_repo/raw/main",
+                    "https://github.com/amm1edev/AmeMods/raw/main",
+                    "https://github.com/MoriSummerz/ftg-mods/raw/main/",
+                    "https://github.com/iamnalinor/FTG-modules/raw/main/",
+                    "https://github.com/Den4ikSuperOstryyPer4ik/Astro-modules/raw/main/",
+                    "https://github.com/vsecoder/hikka_modules/raw/main/",
+                    "https://github.com/GD-alt/mm-hikka-mods/raw/main/",
+                    "https://github.com/anon97945/hikka-mods/raw/master/",
+                    "https://github.com/shadowhikka/sh.modules/raw/main/",
+                    "https://github.com/dorotorothequickend/DorotoroModules/raw/main/",
+                    "https://github.com/idiotcoders/idiotmodules/raw/main/",
+                    "https://github.com/N3rcy/modules/raw/main/",
+                    "https://github.com/sqlmerr/hikka_mods/raw/main/",
+                    "https://github.com/KorenbZla/HikkaModules/raw/main/",
+                    "https://github.com/FajoX1/FAmods/raw/main/",
+                    "https://github.com/coddrago/modules/raw/main/",
                 ],
                 lambda: self.strings("add_repo_config_doc"),
                 validator=loader.validators.Series(validator=loader.validators.Link()),
@@ -394,7 +407,7 @@ class LoaderMod(loader.Module):
         ):
             if message.file:
                 await message.edit("")
-                message = await message.respond("🌘", reply_to=utils.get_topic(message))
+                message = await message.respond("<emoji document_id=5264913427041631157>🦋</emoji>", reply_to=utils.get_topic(message))
 
             if await self.inline.form(
                 self.strings("module_fs"),
