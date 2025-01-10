@@ -167,7 +167,7 @@ class Help(loader.Module):
         if hasattr(module, "inline_handlers") and not is_dragon:
             for name, fun in module.inline_handlers.items():
                 reply += (
-                    "\n<blockquote><emoji document_id=5262584377946159361>📱</emoji> <code>{}</code></blockquote> {}".format(
+                    "\n<pre><emoji document_id=5262584377946159361>📱</emoji> <code>{}</code></pre> {}".format(
                         f"@{self.inline.bot_username} {name}",
                         (
                             utils.escape_html(inspect.getdoc(fun))
@@ -179,7 +179,7 @@ class Help(loader.Module):
 
         for name, fun in commands.items():
             reply += (
-                "\n<pre><emoji document_id=5265113787265988883>🦋</emoji> <code>{}{}</code></pre>{} {}".format(
+                "\n<pre><emoji document_id=5265113787265988883>🦋</emoji> <code>{}{}</code>{}</pre> {}".format(
                     utils.escape_html(self.get_prefix("dragon" if is_dragon else None)),
                     name,
                     (
