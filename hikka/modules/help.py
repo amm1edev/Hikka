@@ -357,7 +357,7 @@ class Help(loader.Module):
 
         await utils.answer(
             message,
-            "{}\n<blockqoute>{}</blockqoute><blockoqute>{}</blockqoute>".format(
+            "{}\n<blockqoute>{}</blockqoute>{}".format(
                 reply,
                 "".join(core_ + plain_ + dragon_ + (no_commands_ if force else [])),
                 (
