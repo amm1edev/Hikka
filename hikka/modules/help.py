@@ -183,8 +183,7 @@ class Help(loader.Module):
 
         for name, fun in commands.items():
             reply += (
-                "\n<blockqoute><emoji document_id=5265113787265988883>🦋</emoji>"
-                " <code>{}{}</code></blockqoute>{} {}".format(
+                "\n<blockqoute><emoji document_id=5265113787265988883>🦋</emoji> <code>{}{}</code></blockqoute>{} {}".format(
                     utils.escape_html(self.get_prefix("dragon" if is_dragon else None)),
                     name,
                     (
@@ -358,7 +357,7 @@ class Help(loader.Module):
 
         await utils.answer(
             message,
-            "{}\n<blockqoute>{}{}</blockqoute>".format(
+            "{}\n<blockqoute>{}</blockqoute><blockoqute>{}</blockqoute>".format(
                 reply,
                 "".join(core_ + plain_ + dragon_ + (no_commands_ if force else [])),
                 (
