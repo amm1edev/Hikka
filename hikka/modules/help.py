@@ -179,7 +179,7 @@ class Help(loader.Module):
 
         for name, fun in commands.items():
             reply += (
-                "\n<pre><emoji document_id=5265113787265988883>🦋</emoji> <code>{}{}</code>{} {}</pre>".format(
+                "\n<blockquote><emoji document_id=5265113787265988883>🦋</emoji> <code>{}{}</code>{} {}</blockquote>".format(
                     utils.escape_html(self.get_prefix("dragon" if is_dragon else None)),
                     name,
                     (
@@ -259,7 +259,7 @@ class Help(loader.Module):
             if mod.name in self.get("hide", []) and not force:
                 continue
 
-            tmp = "\n{} <code>{}</code>".format(DRAGON_EMOJI, mod.name)
+            tmp = "\n{} <code>{}</code>\n".format(DRAGON_EMOJI, mod.name)
             first = True
 
             for cmd in mod.commands:
@@ -293,12 +293,12 @@ class Help(loader.Module):
                 and not getattr(mod, "callback_handlers", None)
             ):
                 no_commands_ += [
-                    "\n{} <code>{}</code>".format(self.config["empty_emoji"], name)
+                    "\n{} <code>{}</code>\n".format(self.config["empty_emoji"], name)
                 ]
                 continue
 
             core = mod.__origin__.startswith("<core")
-            tmp += "\n{} <code>{}</code>".format(
+            tmp += "\n{} <code>{}</code>\n".format(
                 self.config["core_emoji"] if core else self.config["plain_emoji"], name
             )
             first = True
@@ -353,7 +353,7 @@ class Help(loader.Module):
 
         await utils.answer(
             message,
-            "{}\n<pre>{}</pre>{}".format(
+            "{}\n<blockquote>{}</blockquote>{}".format(
                 reply,
                 "".join(core_ + plain_ + dragon_ + (no_commands_ if force else [])),
                 (
