@@ -499,7 +499,12 @@ loader:
     _cmd_doc_addrepo: "Добавить дополнительный репозиторий"
     _cmd_doc_delrepo: "Удалить дополнительный репозиторий"
     basic_auth_doc: "Авторизация для доступа к репозиторию"
-
+    link: "<blockquote><emoji document_id=5264913427041631157>🦋</emoji> <b><a href=\"{url}\">Ссылка</a> на</b> <code>{class_name}</code>\n\n<blockquote><emoji document_id=5265113787265988883>🦋</emoji> <code>{prefix}dlm {url}</code></blockquote>\n\n{not_exact}"
+    file: "<blockquote><emoji document_id=5264913427041631157>🦋</emoji> <b>Файл</b> <code>{class_name}</code>\n\n<emoji document_id=5265113787265988883>🦋</emoji> <code>{prefix}lm</code> <b>в ответ на это сообщение, чтобы установить</b></blockquote>\n\n{not_exact}"
+    args: "<emoji document_id=5210952531676504517>❌</emoji> <b>Вы должны указать аргументы</b>"
+    404: "<emoji document_id=5210952531676504517>❌</emoji> <b>Модуль не найден</b>"
+    not_exact: "<emoji document_id=5312383351217201533>⚠️</emoji> <b>Точного совпадения не найдено, поэтому показан ближайший результат</b>"
+    
 translations:
     lang_saved: "{} <b>Язык сохранён!</b>"
     pack_saved: "<emoji document_id=5197474765387864959>👍</emoji> <b>Пакет переводов сохранён!</b>"
