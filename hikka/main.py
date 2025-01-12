@@ -784,12 +784,12 @@ class Hikka:
                 logging.getLogger().handlers[0].get_logid_by_client(client.tg_id),
                 "https://0x0.st/8-4Z.mp4#nsfw",
                 caption=(
-                    "🦋 <b>Limoka {} started!</b>\n\n",
+                    "🦋 <b>Limoka started!</b>\n\n",
                     "🦋 <b>Fork Developer: </b>thislyomi.t.me",
                         upd,
-                        web_url,
                     )
                 ),
+            )
            
 
             logging.debug(
