@@ -671,7 +671,7 @@ class LoaderMod(loader.Module):
                                 self.strings("requirements_installing").format(
                                     "\n".join(
                                         "<emoji"
-                                        " document_id=4971987363145188045>▫️</emoji>"
+                                        " document_id=5265113787265988883>🦋</emoji>"
                                         f" {req}"
                                         for req in requirements
                                     )
@@ -920,7 +920,7 @@ class LoaderMod(loader.Module):
 
             if instance.__doc__:
                 modhelp += (
-                    "<i>\n<emoji document_id=5787544344906959608>ℹ️</emoji>"
+                    "<i>\n<emoji document_id=5265113787265988883>🦋</emoji>"
                     f" {utils.escape_html(inspect.getdoc(instance))}</i>\n"
                 )
 
@@ -1024,7 +1024,7 @@ class LoaderMod(loader.Module):
                     (
                         dragon.DRAGON_EMOJI
                         if is_dragon
-                        else "<emoji document_id=4971987363145188045>▫️</emoji>"
+                        else "<emoji document_id=5265113787265988883>🦋</emoji>"
                     ),
                     utils.escape_html(self.get_prefix("dragon" if is_dragon else None)),
                     _name,
