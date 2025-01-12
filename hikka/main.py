@@ -784,12 +784,13 @@ class Hikka:
                 logging.getLogger().handlers[0].get_logid_by_client(client.tg_id),
                 "https://0x0.st/8-4Z.mp4#nsfw",
                 caption=(
-                    "🦋<b> Limoka {} started! </b>\n\n<b>☂️ Fork developer:</b> thislyomi.t.me\n\n💜"
+                    "🦋<b> Limoka {} started! </b>\n\n<b>☂️ Fork developer:</b> thislyomi.t.me \n<b>GitHub commit SHA: <a"
+                    ' href="https://github.com/hikariatama/Hikka/commit/{}">{}</a></b>\n✊'    
                     " <b>Update status: {}</b>".format(
                         ".".join(list(map(str, list(__version__)))),
                         build,
-                        upd,
                         build[:7],
+                        upd,
                         web_url,
                     )
                 ),
