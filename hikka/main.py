@@ -788,7 +788,8 @@ class Hikka:
                     "<emoji document_id=5265113787265988883>🦋</emoji> <b>Fork Developer: </b>thislyomi.t.me"
                         upd,
                         web_url,
-                )
+                    )
+                ),
             )
 
             logging.debug(
