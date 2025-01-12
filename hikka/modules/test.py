@@ -29,7 +29,7 @@ for mod in os.scandir(DEBUG_MODS_DIR):
 
 
 @loader.tds
-class TestMod(loader.Module):
+class TesterMod(loader.Module):
     """Perform operations based on userbot self-testing"""
 
     strings = {"name": "Tester"}
@@ -70,6 +70,12 @@ class TestMod(loader.Module):
                 "Ignore common errors (e.g. 'TypeError' in telethon)",
                 validator=loader.validators.Boolean(),
                 on_change=self._pass_config_to_logger,
+            ),
+            loader.ConfigValue(
+                "ping_text",
+                "<emoji document_id=5346334956022931910>🦋</emoji> &lt;b&gt;𝐋𝐢𝐦𝐨𝐤𝐚\n\n"
+                "<emoji document_id=5345930039391166153>🦋</emoji> 𝐏𝐢𝐧𝐠: &lt;/b&gt;&lt;code&gt;{ping}&lt;/code&gt;\n"
+                "<emoji document_id=5346012734691484178>💜</emoji> &lt;b&gt;𝐔𝐩𝐭𝐢𝐦𝐞: &lt;/b&gt;&lt;code&gt;{uptime}&lt;/code&gt;"
             ),
         )
 
