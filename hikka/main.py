@@ -785,7 +785,7 @@ class Hikka:
                 "https://0x0.st/8-4Z.mp4#nsfw",
                 caption=(
                     "<emoji document_id=5264913427041631157>🦋</emoji> <b>Limoka {} started!</b>\n\n",
-                    "<emoji document_id=5265113787265988883>🦋</emoji> <b>Fork Developer: </b>thislyomi.t.me"
+                    "<emoji document_id=5265113787265988883>🦋</emoji> <b>Fork Developer: </b>thislyomi.t.me",
                         upd,
                         web_url,
                     )
