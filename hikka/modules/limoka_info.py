@@ -137,7 +137,7 @@ class KInfoMod(loader.Module):
             await utils.answer(message, info)
 
     @loader.command()
-    async def setcinfo(self, message):
+    async def setinfo(self, message):
         """Установить кастомный текст информации: .setcinfo <текст>"""
         args = utils.get_args_raw(message)
         if not args:
