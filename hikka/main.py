@@ -786,11 +786,12 @@ class Hikka:
                 caption=(
                     "🦋<b> Limoka {} started! </b>\n\n<b>Fork developer:</b> thislyomi.t.me\n☂️ <b>GitHub commit SHA: <a"
                     ' href="https://github.com/hikariatama/Hikka/commit/{}">{}</a></b>\n💜'
-                    " <b>Update status: {}</b>\n<b>{}</b>".format(
+                    " <b>Update status: {}</b>".format(
                         ".".join(list(map(str, list(__version__)))),
                         build,
                         build[:7],
                         upd,
+                        web_url,
                     )
                 ),
             )
