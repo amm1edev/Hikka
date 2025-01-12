@@ -789,7 +789,7 @@ class Hikka:
                         ".".join(list(map(str, list(__version__)))),
                         build,
                         upd,
-                        build[:7]
+                        build[:7],
                         web_url,
                     )
                 ),
