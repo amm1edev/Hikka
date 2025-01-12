@@ -788,6 +788,8 @@ class Hikka:
                     ' href="https://github.com/hikariatama/Hikka/commit/{}">{}</a></b>\n💜'
                     " <b>Update status: {}</b>\n<b>{}</b>".format(
                         ".".join(list(map(str, list(__version__)))),
+                        build,
+                        build[:7],
                         upd,
                     )
                 ),
