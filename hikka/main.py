@@ -790,7 +790,7 @@ class Hikka:
                         web_url,
                     )
                 ),
-            )
+           
 
             logging.debug(
                 "· Started for %s · Prefix: «%s» ·",
