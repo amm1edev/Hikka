@@ -19,6 +19,7 @@ import re
 import io
 import shutil
 import sys
+import difflib
 import time
 import typing
 import uuid
