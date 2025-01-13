@@ -14,10 +14,9 @@ class SwitchToLimoka(loader.Module):
 
         if self.get("done"):
             keyboard = InlineKeyboardMarkup(inline_keyboard=[[
-                InlineKeyboardButton(text='Dev', url='https://t.me/ThisLyomi')],[
+                InlineKeyboardButton(text='Dev', url='https://t.me/ThisLyomi')], [
                 InlineKeyboardButton(text='Github', url='https://github.com/amm1edev/limoka')
-            ]]
-            )
+            ]])
             await self.inline._bot.send_photo(
                 self.tg_id, 
                 "https://0x0.st/8osY.jpg",
@@ -26,22 +25,20 @@ class SwitchToLimoka(loader.Module):
                 reply_markup=keyboard,
             )
 
-            self.set("done", None) # db need to be clear, for case if user backup db and switches once more
-      await self.invoke('unloadmod', 'SwitchToLimoka', self.inline.bot_id)
+            self.set("done", None) 
+            
+            await self.invoke('unloadmod', 'SwitchToLimoka', self.inline.bot_id)
 
     @loader.command()
     async def switch(self, message: Message):
         """ - Automatically switch to limoka fork."""
 
-        await utils.answer(message, "<emoji document_id=5122933683820430249>⭕️</emoji><b> Wait...</b>
-")
+        await utils.answer(message, "<emoji document_id=5122933683820430249>⭕️</emoji><b> Wait...</b>")
 
         if "amm1edev" in utils.get_git_info()[1]:
-            return await utils.answer(message, "<emoji document_id=4927334452184482448>🔇</emoji> <b>are you serious? you're already on the fork.</b>
-")
+            return await utils.answer(message, "<emoji document_id=4927334452184482448>🔇</emoji> <b>are you serious? you're already on the fork.</b>")
 
-        await utils.answer(message, "<emoji document_id=5116298753917060171>🐍</emoji>
- <b>switching...</b>")
+        await utils.answer(message, "<emoji document_id=5116298753917060171>🐍</emoji> <b>switching...</b>")
 
         await asyncio.create_subprocess_shell(
             "git remote set-url origin https://github.com/amm1edev/Limoka.git",
