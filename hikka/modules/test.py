@@ -388,7 +388,9 @@ class TesterMod(loader.Module):
         
         try:
             await self.client.send_file(message.chat_id, banner, caption=text)
-
+        except:
+            None
+            
     async def client_ready(self):
         chat, _ = await utils.asset_channel(
             self._client,
