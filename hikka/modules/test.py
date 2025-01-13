@@ -83,6 +83,7 @@ class TesterMod(loader.Module):
                 "https://0x0.st/s/CKdDGf9leF8W85oBYjooQg/8ore.jpg",
                 lambda: "URL баннера для команды ping",
                 validator=loader.validators.Link(),
+            ),
         )
 
     def _pass_config_to_logger(self):
