@@ -379,7 +379,7 @@ class TesterMod(loader.Module):
         start = time.perf_counter_ns()
         ping_ms = round((time.perf_counter_ns() - start) / 10**6, 3)
         
-        text = self.config["text"].format(
+        text = self.config["ping_text"].format(
                 ping=ping_ms,
                 uptime=utils.formatted_uptime()
 
