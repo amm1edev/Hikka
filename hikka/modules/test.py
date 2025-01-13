@@ -75,8 +75,14 @@ class TesterMod(loader.Module):
                 "ping_text",
                 "<emoji document_id=5346334956022931910>🦋</emoji> &lt;b&gt;𝐋𝐢𝐦𝐨𝐤𝐚\n\n"
                 "<emoji document_id=5345930039391166153>🦋</emoji> 𝐏𝐢𝐧𝐠: &lt;/b&gt;&lt;code&gt;{ping}&lt;/code&gt;\n"
-                "<emoji document_id=5346012734691484178>💜</emoji> &lt;b&gt;𝐔𝐩𝐭𝐢𝐦𝐞: &lt;/b&gt;&lt;code&gt;{uptime}&lt;/code&gt;"
+                "<emoji document_id=5346012734691484178>💜</emoji> &lt;b&gt;𝐔𝐩𝐭𝐢𝐦𝐞: &lt;/b&gt;&lt;code&gt;{uptime}&lt;/code&gt;",
+                lambda: "Текст команды ping"
             ),
+            loader.ConfigValue(
+                "banner_url",
+                "https://0x0.st/s/CKdDGf9leF8W85oBYjooQg/8ore.jpg",
+                lambda: "URL баннера для команды ping",
+                validator=loader.validators.Link(),
         )
 
     def _pass_config_to_logger(self):
@@ -352,23 +358,37 @@ class TesterMod(loader.Module):
         except ValueError:
             await utils.answer(message, self.strings("suspend_invalid_time"))
 
+    def _render_ping(self):
+        import datetime
+        offset = datetime.timedelta(hours=self.config["timezone"])
+        tz = datetime.timezone(offset)
+        time2 = datetime.datetime.now(tz)
+        time = time2.strftime("%H:%M:%S")
+        uptime = utils.formatted_uptime()
+        return (
+            self.config["custom_message"].format(
+                time=time,
+                uptime=uptime,
+            )
+            if self.config["custom_message"] != "no"
+            else (f'🕷️ <b>Аптайм</b>: <b>{uptime}</b>')
+        )
+
+    
     @loader.command()
     async def ping(self, message: Message):
+        pingtext = self.config["ping_text"]
         start = time.perf_counter_ns()
-        message = await utils.answer(message, "🌘")
+        ping_ms = round((time.perf_counter_ns() - start) / 10**6, 3)
+        
+        text = self.config["text"].format(
+                ping=ping_ms,
+                uptime=utils.formatted_uptime()
 
-        await utils.answer(
-            message,
-            self.strings("results_ping").format(
-                round((time.perf_counter_ns() - start) / 10**6, 3),
-                utils.formatted_uptime(),
-            )
-            + (
-                ("\n\n" + self.strings("ping_hint"))
-                if random.choice([0, 0, 1]) == 1
-                else ""
-            ),
-        )
+        banner = self.config["banner_url"]
+        
+        try:
+            await self.client.send_file(message.chat_id, banner, caption=text)
 
     async def client_ready(self):
         chat, _ = await utils.asset_channel(
