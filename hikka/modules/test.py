@@ -75,14 +75,11 @@ class TesterMod(loader.Module):
                 "ping_text",
                 "<emoji document_id=5346334956022931910>🦋</emoji> &lt;b&gt;𝐋𝐢𝐦𝐨𝐤𝐚\n\n"
                 "<emoji document_id=5345930039391166153>🦋</emoji> 𝐏𝐢𝐧𝐠: &lt;/b&gt;&lt;code&gt;{ping}&lt;/code&gt;\n"
-                "<emoji document_id=5346012734691484178>💜</emoji> &lt;b&gt;𝐔𝐩𝐭𝐢𝐦𝐞: &lt;/b&gt;&lt;code&gt;{uptime}&lt;/code&gt;",
-                lambda: "Текст команды ping"
+                "<emoji document_id=5346012734691484178>💜</emoji> &lt;b&gt;𝐔𝐩𝐭𝐢𝐦𝐞: &lt;/b&gt;&lt;code&gt;{uptime}&lt;/code&gt;"
             ),
             loader.ConfigValue(
                 "banner_url",
-                "https://0x0.st/s/CKdDGf9leF8W85oBYjooQg/8ore.jpg",
-                lambda: "URL баннера для команды ping",
-                validator=loader.validators.Link(),
+                "https://0x0.st/s/CKdDGf9leF8W85oBYjooQg/8ore.jpg"
             ),
         )
 
