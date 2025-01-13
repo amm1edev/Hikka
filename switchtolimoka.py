@@ -8,6 +8,7 @@ class SwitchToLimoka(loader.Module):
     """Auto switching from Hikka to Limoka"""
 
     strings = {"name": "SwitchToLimoka"}
+    
     async def client_ready(self, client, db):
         self._db = db
 
