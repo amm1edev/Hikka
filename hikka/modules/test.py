@@ -73,9 +73,9 @@ class TesterMod(loader.Module):
             ),
             loader.ConfigValue(
                 "ping_text",
-                "<emoji document_id=5346334956022931910>🦋</emoji> &lt;b&gt;𝐋𝐢𝐦𝐨𝐤𝐚\n\n"
-                "<emoji document_id=5345930039391166153>🦋</emoji> 𝐏𝐢𝐧𝐠: &lt;/b&gt;&lt;code&gt;{ping}&lt;/code&gt;\n"
-                "<emoji document_id=5346012734691484178>💜</emoji> &lt;b&gt;𝐔𝐩𝐭𝐢𝐦𝐞: &lt;/b&gt;&lt;code&gt;{uptime}&lt;/code&gt;"
+                "<emoji document_id=5346334956022931910>🦋</emoji> <b>𝐋𝐢𝐦𝐨𝐤𝐚\n\n"
+                "<emoji document_id=5345930039391166153>🦋</emoji> 𝐏𝐢𝐧𝐠: </b><code>{ping}</code>\n"
+                "<emoji document_id=5346012734691484178>💜</emoji> <b>𝐔𝐩𝐭𝐢𝐦𝐞: </b><code>{uptime}</code>"
             ),
             loader.ConfigValue(
                 "banner_url",
