@@ -27,12 +27,12 @@ class SwitchToLimoka(loader.Module):
 
             self.set("done", None) 
             
-            await self.invoke('unloadmod', 'SwitchToLimoka', self.inline.bot_id)
+            if not self.get("unloading"):
+                self.set("unloading", True)
+                await self.invoke('unloadmod', 'SwitchToLimoka', self.inline.bot_id)
 
     @loader.command()
     async def switch(self, message: Message):
-        """ - Automatically switch to limoka fork."""
-
         await utils.answer(message, "<emoji document_id=5122933683820430249>⭕️</emoji><b> Wait...</b>")
 
         if "amm1edev" in utils.get_git_info()[1]:
