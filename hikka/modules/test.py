@@ -382,6 +382,7 @@ class TesterMod(loader.Module):
         text = self.config["ping_text"].format(
                 ping=ping_ms,
                 uptime=utils.formatted_uptime()
+        )
 
         banner = self.config["banner_url"]
         
