@@ -377,7 +377,7 @@ class TesterMod(loader.Module):
     async def ping(self, message: Message):
         pingtext = self.config["ping_text"]
         start = time.perf_counter_ns()
-        ping_ms = self.strings("results_ping").format(
+        ping_ms = "".format(
             round((time.perf_counter_ns() - start) / 10**3, 3),
         )
         
