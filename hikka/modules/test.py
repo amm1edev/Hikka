@@ -385,8 +385,8 @@ class TesterMod(loader.Module):
                 ping=ping_ms,
                 uptime=utils.formatted_uptime()
         )
-
-        if self.config[banner_url]:
+        
+        if self.config["banner_url"]:
             try:
                 banner = self.config["banner_url"]
                 await self.client.send_file(message.chat_id, banner, caption=text)
