@@ -74,7 +74,7 @@ class TesterMod(loader.Module):
             loader.ConfigValue(
                 "ping_text",
                 "<emoji document_id=5346334956022931910>🦋</emoji> <b>𝐋𝐢𝐦𝐨𝐤𝐚\n\n"
-                "<emoji document_id=5345930039391166153>🦋</emoji> 𝐏𝐢𝐧𝐠: </b><code>{ping}</code>\n"
+                "<emoji document_id=5345930039391166153>🦋</emoji> 𝐏𝐢𝐧𝐠: </b><code>{ping} ms</code>\n"
                 "<emoji document_id=5346012734691484178>💜</emoji> <b>𝐔𝐩𝐭𝐢𝐦𝐞: </b><code>{uptime}</code>"
             ),
             loader.ConfigValue(
@@ -356,41 +356,27 @@ class TesterMod(loader.Module):
         except ValueError:
             await utils.answer(message, self.strings("suspend_invalid_time"))
 
-    def _render_ping(self):
-        import datetime
-        offset = datetime.timedelta(hours=self.config["timezone"])
-        tz = datetime.timezone(offset)
-        time2 = datetime.datetime.now(tz)
-        time = time2.strftime("%H:%M:%S")
-        uptime = utils.formatted_uptime()
-        return (
-            self.config["custom_message"].format(
-                time=time,
-                uptime=uptime,
-            )
-            if self.config["custom_message"] != "no"
-            else (f'🕷️ <b>Аптайм</b>: <b>{uptime}</b>')
-        )
-
-    
     @loader.command()
-    async def ping(self, message: Message):    
+    async def ping(self, message: Message):
+        
+        await utils.answer(message, "🌘")
+        
         start = time.perf_counter_ns()
-        ping_ms = round((time.perf_counter_ns() - start) / 10**6, 3)
-        
+        ping_time = round((time.perf_counter_ns() - start) / 10**6, 3)
+        uptime = utils.formatted_uptime()
+
         text = self.config["ping_text"].format(
-                ping=ping_ms,
-                uptime=utils.formatted_uptime()
-        )
+                ping=ping_time,
+                uptime=uptime
+        )   
+
+        banner = self.config["banner_url"]
         
-        if self.config["banner_url"]:
-            try:
-                banner = self.config["banner_url"]
-                await self.client.send_file(message.chat_id, banner, caption=text)
-            except:
-                None
+        if banner != None:
+            await message.delete()
+            await self.client.send_file(message.chat_id, banner, caption=text)
         else:
-            await utils.answer(text)
+            await utils.answer(message, text)
                     
     async def client_ready(self):
         chat, _ = await utils.asset_channel(
