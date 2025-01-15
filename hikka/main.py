@@ -756,17 +756,16 @@ class Hikka:
             diff = repo.git.log([f"HEAD..origin/{version.branch}", "--oneline"])
             upd = "Update required" if diff else "Up-to-date"
 
-            logo = (
+logo = (
     "    __    ______  _______  __ __ ___ \n"
     "   / /   /  _/  |/  / __ \\/ //_//   |\n"
     "  / /    / // /|_/ / / / / ,<  / /| |\n"
     " / /____/ // /  / / /_/ / /| |/ ___ |\n"
     "/_____/___/_/  /_/\\____/_/ |_/_/  |_| \n\n"
     f"• Build: {build[:7]}\n"
-    f"• Version: \n"
-) {'.'.join(list(map(str, list(__version__))))}
-                f"• {upd}\n"
-            )
+    f"• Version: {'.'.join(map(str, __version__))}\n"  # Fixed this line
+    f"• {upd}\n"
+)
 
             if not self.omit_log:
                 print(logo)
