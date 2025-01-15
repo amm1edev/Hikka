@@ -359,9 +359,10 @@ class TesterMod(loader.Module):
     @loader.command()
     async def ping(self, message: Message):
         
+        start = time.perf_counter_ns()
+        
         await utils.answer(message, "🌘")
         
-        start = time.perf_counter_ns()
         ping_time = round((time.perf_counter_ns() - start) / 10**6, 3)
         uptime = utils.formatted_uptime()
 
