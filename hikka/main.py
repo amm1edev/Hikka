@@ -763,7 +763,7 @@ logo = (
     " / /____/ // /  / / /_/ / /| |/ ___ |\n"
     "/_____/___/_/  /_/\\____/_/ |_/_/  |_| \n\n"
     f"• Build: {build[:7]}\n"
-    f"• Version: {'.'.join(map(str, __version__))}\n"  # Fixed this line
+    f"• Version: {'.'.join(map(str, __version__))}\n"
     f"• {upd}\n"
 )
 
