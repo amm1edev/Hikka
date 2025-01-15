@@ -700,7 +700,7 @@ class Hikka:
                         )
                     )
                 )
-                client.phone = "never gonna give you up"
+                client.phone = "net idi naxyi"
 
                 self.clients += [client]
             except sqlite3.OperationalError:
@@ -756,18 +756,13 @@ class Hikka:
             diff = repo.git.log([f"HEAD..origin/{version.branch}", "--oneline"])
             upd = "Update required" if diff else "Up-to-date"
 
-logo = (
-    " ██      ██ ███    ███  ██████  ██   ██  █████  \n"
-    " ██      ██ ████  ████ ██    ██ ██  ██  ██   ██ \n"
-    " ██      ██ ██ ████ ██ ██    ██ █████   ███████ \n"
-    " ██      ██ ██  ██  ██ ██    ██ ██  ██  ██   ██ \n"
-    " ███████ ██ ██      ██  ██████  ██   ██ ██   ██ \n"
-    "                                                \n"
-    "                                                \n"
-    f"• Build: {build[:7]}\n"
-    f"• Version: {'.'.join(map(str, __version__))}\n"
-    f"• {upd}\n"
-)
+            logo = (
+                "█ █ █ █▄▀ █▄▀ ▄▀█\n"
+                "█▀█ █ █ █ █ █ █▀█\n\n"
+                f"• Build: {build[:7]}\n"
+                f"• Version: {'.'.join(list(map(str, list(__version__))))}\n"
+                f"• {upd}\n"
+            )
 
             if not self.omit_log:
                 print(logo)
@@ -787,7 +782,7 @@ logo = (
 
             await client.hikka_inline.bot.send_animation(
                 logging.getLogger().handlers[0].get_logid_by_client(client.tg_id),
-                "https://0x0.st/8-4Z.mp4#nsfw",
+                "https://0x0.st/s/SVi3--xmOvM2PihaJ_6xIA/8-Ul.mp4",
                 caption=(
                     "🦋<b> Limoka {} started! </b>\n\n<b>☂️ Fork developer:</b> thislyomi.t.me \n<b>💜 GitHub commit SHA: <a"
                     ' href="https://github.com/amm1edev/Limoka/commit/{}">{}</a></b>\n🍇'    
