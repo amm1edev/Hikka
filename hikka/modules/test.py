@@ -81,6 +81,10 @@ class TesterMod(loader.Module):
                 "banner_url",
                 "https://0x0.st/s/CKdDGf9leF8W85oBYjooQg/8ore.jpg"
             ),
+            loader.ConfigValue(
+                "ping_emoji",
+                "<emoji document_id=5264913427041631157>🦋</emoji>"
+            ),
         )
 
     def _pass_config_to_logger(self):
@@ -361,7 +365,7 @@ class TesterMod(loader.Module):
         
         start = time.perf_counter_ns()
         
-        await utils.answer(message, "🌘")
+        await utils.answer(message, self.config["ping_emoji"])
         
         ping_time = round((time.perf_counter_ns() - start) / 10**6, 3)
         uptime = utils.formatted_uptime()
