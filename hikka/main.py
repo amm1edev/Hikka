@@ -757,8 +757,11 @@ class Hikka:
             upd = "Update required" if diff else "Up-to-date"
 
             logo = (
-                "█ █ █ █▄▀ █▄▀ ▄▀█\n"
-                "█▀█ █ █ █ █ █ █▀█\n\n"
+                "  _     _                 _         \n"
+                " | |   (_)_ __ ___   ___ | | ____ _ \n"
+                " | |   | | '_ ` _ \ / _ \| |/ / _` |\n"
+                " | |___| | | | | | | (_) |   < (_| |\n"
+                ' |_____|_|_| |_| |_|\___/|_|\_\__,_|\n\n'
                 f"• Build: {build[:7]}\n"
                 f"• Version: {'.'.join(list(map(str, list(__version__))))}\n"
                 f"• {upd}\n"
