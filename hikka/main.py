@@ -764,7 +764,7 @@ class Hikka:
     "/_____/___/_/  /_/\\____/_/ |_/_/  |_| \n\n"
     f"• Build: {build[:7]}\n"
     f"• Version: \n"
-) {'.'.join(list(map(str, list(__version__))))}\n"
+) {'.'.join(list(map(str, list(__version__))))}
                 f"• {upd}\n"
             )
 
