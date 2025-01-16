@@ -224,7 +224,7 @@ def gen_port(cfg: str = "port", no8080: bool = False) -> int:
 
     return port
 
-def parse_arguments(self) -> dict:
+def parse_arguments() -> dict:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--port",
@@ -296,7 +296,7 @@ def parse_arguments(self) -> dict:
     )
     arguments = parser.parse_args()
 
-    # Добавляем условие для автоматического добавления аргумента --no-web
+        # это можно читать только девам ?
     if "serv00" in socket.gethostname():
         arguments.disable_web = True
 
