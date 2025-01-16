@@ -224,12 +224,7 @@ def gen_port(cfg: str = "port", no8080: bool = False) -> int:
 
     return port
 
-
-def parse_arguments() -> dict:
-    """
-    Parses the arguments
-    :returns: Dictionary with arguments
-    """
+def parse_arguments(self) -> dict:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--port",
@@ -300,6 +295,11 @@ def parse_arguments() -> dict:
         help="Do not print colorful output using ANSI escapes",
     )
     arguments = parser.parse_args()
+
+    # Добавляем условие для автоматического добавления аргумента --no-web
+    if "serv00" in socket.gethostname():
+        arguments.disable_web = True
+
     logging.debug(arguments)
     return arguments
 
