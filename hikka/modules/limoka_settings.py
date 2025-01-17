@@ -536,19 +536,19 @@ class HikkaSettingsMod(loader.Module):
     @loader.command()
     async def enable_core_protection(self, message: Message):
         if self._db.get(main.__name__, "remove_core_protection", True):
-            await utils.answer(message, "Уже включено")
+            await utils.answer(message, self.strings("core_protection_already_enabled"))
             return
 
         await self.inline.form(
             message=message,
-            text="Включить защиту ядра?",
+            text=self.strings("core_protection_enable_confirm"),
             reply_markup=[
                 {
-                    "text": "Да",
+                    "text": self.strings("core_protection_enable_btn"),
                     "callback": self._enable_core_protection,
                 },
                 {
-                    "text": "Нет",
+                    "text": self.strings("btn_no"),
                     "action": "close",
                 },
             ],
