@@ -536,7 +536,7 @@ class HikkaSettingsMod(loader.Module):
     @loader.command()
     async def enable_core_protection(self, message: Message):
         if self._db.get(main.__name__, "remove_core_protection", True):
-            await utils.answer(message, self.strings("core_protection_already_enabled"))
+            await utils.answer(message, "Уже включено")
             return
 
         await self.inline.form(
