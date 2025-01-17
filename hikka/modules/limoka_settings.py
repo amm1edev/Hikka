@@ -530,12 +530,12 @@ class HikkaSettingsMod(loader.Module):
         )
 
     async def _enable_core_protection(self, call: InlineCall):
-        self._db.set(main.__name__, "remove_core_protection", False)
+        self._db.set(main.__name__, "remove_core_protection", True)
         await call.edit(self.strings("core_protection_enabled"))
 
     @loader.command()
     async def enable_core_protection(self, message: Message):
-        if self._db.get(main.__name__, "remove_core_protection", True):
+        if self._db.get(main.__name__, "remove_core_protection", False):
             await utils.answer(message, self.strings("core_protection_already_enabled"))
             return
 
