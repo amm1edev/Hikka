@@ -529,6 +529,31 @@ class HikkaSettingsMod(loader.Module):
             ],
         )
 
+    async def _enable_core_protection(self, call: InlineCall):
+        self._db.set(main.__name__, "remove_core_protection", False)
+        await call.edit(self.strings("core_protection_enabled"))
+
+    @loader.command()
+    async def enable_core_protection(self, message: Message):
+        if self._db.get(main.__name__, "remove_core_protection", True):
+            await utils.answer(message, self.strings("core_protection_already_enabled"))
+            return
+
+        await self.inline.form(
+            message=message,
+            text=self.strings("core_protection_enable_confirm"),
+            reply_markup=[
+                {
+                    "text": self.strings("core_protection_btn"),
+                    "callback": self._enable_core_protection,
+                },
+                {
+                    "text": self.strings("btn_no"),
+                    "action": "close",
+                },
+            ],
+        )
+    
     async def inline__restart(
         self,
         call: InlineCall,
