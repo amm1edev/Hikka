@@ -541,14 +541,14 @@ class HikkaSettingsMod(loader.Module):
 
         await self.inline.form(
             message=message,
-            text=self.strings("core_protection_enable_confirm"),
+            text="Включить защиту ядра?",
             reply_markup=[
                 {
-                    "text": self.strings("core_protection_enable_btn"),
+                    "text": "Да",
                     "callback": self._enable_core_protection,
                 },
                 {
-                    "text": self.strings("btn_no"),
+                    "text": "Нет",
                     "action": "close",
                 },
             ],
