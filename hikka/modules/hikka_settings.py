@@ -544,7 +544,7 @@ class HikkaSettingsMod(loader.Module):
             text=self.strings("core_protection_enable_confirm"),
             reply_markup=[
                 {
-                    "text": self.strings("core_protection_btn"),
+                    "text": self.strings("core_protection_enable_btn"),
                     "callback": self._enable_core_protection,
                 },
                 {
