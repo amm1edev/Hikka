@@ -1,4 +1,4 @@
-# ©️ Dan Gazizullin, 2021-2023
+https://0x0.st/s/9R_TGEeakZ-dSYS4xbjguw/8HbI.jpg     # ©️ Dan Gazizullin, 2021-2023
 # This file is a part of Hikka Userbot
 # 🌐 https://github.com/hikariatama/Hikka
 # You can redistribute it and/or modify it under the terms of the GNU AGPLv3
@@ -90,9 +90,9 @@ class UpdateNotifier(loader.Module):
             return
 
         if self._pending not in {utils.get_git_hash(), self._notified}:
-            m = await self.inline.bot.send_animation(
+            m = await self.inline.bot.send_photo(
                 self.tg_id,
-                "https://0x0.st/s/r0MkHx2GCWM_1rTL5R9Aqg/8HbF.mp4",
+                "https://0x0.st/s/9R_TGEeakZ-dSYS4xbjguw/8HbI.jpg",
                 caption=self.strings("update_required").format(
                     utils.get_git_hash()[:6],
                     '<a href="https://github.com/hikariatama/Hikka/compare/{}...{}">{}</a>'
