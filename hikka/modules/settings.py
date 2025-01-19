@@ -47,7 +47,7 @@ class CoreMod(loader.Module):
 
     @loader.command()
     async def hikkacmd(self, message: Message):
-        await utils.answer_file(
+        await utils.answer_image(
             message,
             "https://0x0.st/s/0zja9sXH9DXFmm-SZGA3Vg/8HbO.jpg#nsfw",
             self.strings("hikka").format(
@@ -59,7 +59,12 @@ class CoreMod(loader.Module):
                 *version.__version__,
                 utils.get_commit_url(),
                 f"{hikkatl.__version__} #{hikkatl.tl.alltlobjects.LAYER}",
-                "\n<emoji document_id=5377399247589088543>🔥</emoji> <b>Developers:</b> thisLyomi.t.me, dev_die.t.me"
+                (
+                    "<emoji document_id=5377399247589088543>🔥</emoji>"
+                    if self._client.pyro_proxy
+                    else "<emoji document_id=5418308381586759720>📴</emoji>"
+                ),
+                f"<emoji document_id=5377399247589088543>🔥</emoji> <b>Developers:</b> thisLyomi.t.me, dev_die.t.me",
             )
             + (
                 ""
