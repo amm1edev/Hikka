@@ -59,7 +59,7 @@ class CoreMod(loader.Module):
                 *version.__version__,
                 utils.get_commit_url(),
                 f"{hikkatl.__version__} #{hikkatl.tl.alltlobjects.LAYER}",
-                f"<emoji document_id=5377399247589088543>🔥</emoji> <b>Developers:</b> thisLyomi.t.me, dev_die.t.me",
+                "\n<emoji document_id=5377399247589088543>🔥</emoji> <b>Developers:</b> thisLyomi.t.me, dev_die.t.me"
             )
             + (
                 ""
