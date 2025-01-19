@@ -47,7 +47,7 @@ class CoreMod(loader.Module):
 
     @loader.command()
     async def hikkacmd(self, message: Message):
-        await utils.answer_image(
+        await utils.answer_photo(
             message,
             "https://0x0.st/s/0zja9sXH9DXFmm-SZGA3Vg/8HbO.jpg#nsfw",
             self.strings("hikka").format(
