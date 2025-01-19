@@ -9,7 +9,7 @@ import string
 import sys
 import typing
 
-
+ 
 def tty_print(text: str, tty: bool):
     """
     Print text to terminal if tty is True,
