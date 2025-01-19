@@ -784,7 +784,7 @@ class Hikka:
 
             await client.hikka_inline.bot.send_animation(
                 logging.getLogger().handlers[0].get_logid_by_client(client.tg_id),
-                "https://0x0.st/8-4Z.mp4#nsfw",
+                "https://0x0.st/s/rVz8Yeuy-U-08A94s99Ksg/8Hbe.jpg",
                 caption=(
                     "🦋<b> Limoka {} started! </b>\n\n<b>☂️ Fork developer:</b> thislyomi.t.me \n<b>💜 GitHub commit SHA: <a"
                     ' href="https://github.com/amm1edev/Limoka/commit/{}">{}</a></b>\n🍇'    
