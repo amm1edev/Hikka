@@ -782,7 +782,7 @@ class Hikka:
                 )
                 self.omit_log = True
 
-            await client.hikka_inline.bot.send_image(
+            await client.hikka_inline.bot.send_photo(
                 logging.getLogger().handlers[0].get_logid_by_client(client.tg_id),
                 "https://0x0.st/s/rVz8Yeuy-U-08A94s99Ksg/8Hbe.jpg",
                 caption=(
