@@ -90,9 +90,9 @@ class UpdateNotifier(loader.Module):
             return
 
         if self._pending not in {utils.get_git_hash(), self._notified}:
-            m = await self.inline.bot.send_animation(
+            m = await self.inline.bot.send_image(
                 self.tg_id,
-                "https://t.me/hikari_assets/71",
+                "https://0x0.st/s/9R_TGEeakZ-dSYS4xbjguw/8HbI.jpg",
                 caption=self.strings("update_required").format(
                     utils.get_git_hash()[:6],
                     '<a href="https://github.com/hikariatama/Hikka/compare/{}...{}">{}</a>'
