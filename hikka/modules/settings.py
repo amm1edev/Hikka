@@ -54,8 +54,7 @@ class CoreMod(loader.Module):
                 (
                     utils.get_platform_emoji()
                     if self._client.hikka_me.premium and CUSTOM_EMOJIS
-                    else "<emoji document_id=5264913427041631157>🦋</emoji>
- <b>Limoka userbot</b>"
+                    else "<emoji document_id=5264913427041631157>🦋</emoji> <b>Limoka userbot</b>"
                 ),
                 *version.__version__,
                 utils.get_commit_url(),
