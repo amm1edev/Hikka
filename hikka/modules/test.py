@@ -377,7 +377,7 @@ class TesterMod(loader.Module):
 
         banner = self.config["banner_url"]
         
-        if "https://" in banner:
+        if "https://" in banner or banner != None:
             await message.delete()
             await self.client.send_file(message.chat_id, banner, caption=text)
         else:
