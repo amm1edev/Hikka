@@ -60,7 +60,7 @@ class CoreMod(loader.Module):
                 utils.get_commit_url(),
                 f"{hikkatl.__version__} #{hikkatl.tl.alltlobjects.LAYER}",
                 (
-                    "<emoji document_id=5377399247589088543>🔥</emoji>"
+                    ""
                     if self._client.pyro_proxy
                     else "<emoji document_id=5418308381586759720>📴</emoji>"
                 ),
